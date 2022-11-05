@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   mensagensErro = {
     email:[
         {tipo: 'required', aviso: 'Campo Obrigatório!' }, 
-        {tipo: 'email', aviso: 'Digite um Email' }
+        {tipo: 'email', aviso: 'Digite um E-mail válido' }
       ],
       Senha:[
         {tipo: 'required', aviso: 'Digite uma Senha' }, 
