@@ -16,15 +16,23 @@ export class LoginPage implements OnInit {
   mensagensErro = {
     email:[
         {tipo: 'required', aviso: 'Campo Obrigatório!' }, 
-        {tipo: 'email', aviso: 'Digite um E-mail válido' }
+        {tipo: 'email', aviso: 'Digite um E-mail válido'}
       ],
       Senha:[
         {tipo: 'required', aviso: 'Digite uma Senha' }, 
-        {tipo: 'minLength', aviso: 'Minimo de 6 caracteres' }
+        {tipo: 'minLength', aviso: 'Minimo de 6 caracteres'}
       ],
   };
 
   constructor(private formBuilder: FormBuilder) { }
+
+  get email(){
+    return this.formLogin.get('email');
+  }
+
+  get senha(){
+    return this.formLogin.get('senha');
+  }
 
   ngOnInit() {
   }
