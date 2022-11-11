@@ -9,36 +9,66 @@ import { FormBuilder, Validators} from '@angular/forms';
 export class RegistroPage implements OnInit {
 
   formRegistro = this.formBuilder.group({
-    email:['', Validators.compose([Validators.required, Validators.email])],
+
+    nome:['', Validators.compose([Validators.required, Validators.minLength(3)])],
+
+    email:['', Validators.compose([Validators.required, Validators.email, Validators.minLength(6)])],
 
     cpf:['', Validators.compose([Validators.required, Validators.minLength(11),  Validators.maxLength(11)])],
 
-    senha:['', Validators.compose([Validators.required, Validators.minLength(6)])],
+    senha:['', Validators.compose([Validators.required, Validators.minLength(8)])],
 
-    confirmarSenha:['', Validators.compose([Validators.required, Validators.minLength(6)])]
+    confirmaSenha:['', Validators.compose([Validators.required, Validators.minLength(8)])]
   });
 
   mensagensErro = {
+    nome:[
+      {tipo: 'required', aviso: 'Campo Obrigatório!'},
+      {tipo: 'minlength', aviso: 'Digite o Nome'}
+    ],
     email:[
       {tipo: 'required', aviso: 'Campo Obrigatório!'},
-      {tipo: 'email', aviso: 'Digite um E-mail válido'}
+      {tipo: 'email', aviso: 'Digite um E-mail válido'},
+      {tipo: 'minlength', aviso: 'Minimo 6 caracteres'}
     ],
     cpf:[
       {tipo: 'required', aviso: 'Campo Obrigatório!'},
-      {tipo: 'minLength', aviso: 'Minimo 12 numeros ou caracteres'},
-      {tipo: 'maxLength', aviso:'Maximo 12 numeros ou caracteres'}
+      {tipo: 'minlength', aviso: 'Minimo 11 numeros ou caracteres'},
+      {tipo: 'maxlength', aviso:'Maximo 11 numeros ou caracteres'}
     ],
     senha:[
       {tipo: 'required', aviso: 'Digite uma Senha'},
-      {tipo: 'minLength', aviso: 'Minimo 6 caracteres'}
+      {tipo: 'minlength', aviso: 'Minimo 8 caracteres'}
     ],
-    confirmarSenha:[
+    confirmaSenha:[
       {tipo: 'required', aviso: 'Confirme a Senha'},
-      {tipo: 'minLenght', aviso: 'Minimo 6 caracteres'}
+      {tipo: 'minlength', aviso: 'Minimo 8 caracteres'}
     ],
   };
 
   constructor(private formBuilder: FormBuilder) { }
+
+  get nome(){
+    return this.formRegistro.get('nome');
+  }
+
+  get email(){
+    return this.formRegistro.get('email');
+  }
+
+  get cpf(){
+    return this.formRegistro.get('cpf');
+  }
+
+  get senha(){
+    return this.formRegistro.get('senha');
+  }
+
+  get confirmaSenha(){
+    return this.formRegistro.get('confirmaSenha');
+  }
+  
+
 
   ngOnInit() {
   }

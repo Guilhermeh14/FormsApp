@@ -10,7 +10,7 @@ export class LoginPage implements OnInit {
   
   formLogin = this.formBuilder.group({
     email:['', Validators.compose([Validators.required, Validators.email])],
-    senha:['', Validators.compose([Validators.required, Validators.minLength(6)])],
+    senha:['', Validators.compose([Validators.required, Validators.minLength(8)])],
   });
 
   mensagensErro = {
@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
       ],
       Senha:[
         {tipo: 'required', aviso: 'Digite uma Senha' }, 
-        {tipo: 'minLength', aviso: 'Minimo de 6 caracteres'}
+        {tipo: 'minlength', aviso: 'Minimo de 8 caracteres'}
       ],
   };
 
