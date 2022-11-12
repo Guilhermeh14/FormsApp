@@ -13,7 +13,7 @@
   <ion-card>
     <form [formGroup]="formLogin">
     <ion-item>
-      <ion-label>E-mail</ion-label>
+      <ion-label position="floating" >E-mail</ion-label>
       <ion-input type="email" formControlName="email"></ion-input>
     </ion-item>
     <ng-container *ngFor="let erro of mensagensErro.email">
@@ -24,7 +24,7 @@
 
     
     <ion-item>
-      <ion-label>Senha</ion-label>
+      <ion-label position="floating" >Senha</ion-label>
       <ion-input type="password" formControlName="senha"></ion-input>
     </ion-item>
     <ng-container *ngFor="let erro of mensagensErro.Senha">

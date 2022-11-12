@@ -33,8 +33,8 @@ export class RegistroPage implements OnInit {
     ],
     cpf:[
       {tipo: 'required', aviso: 'Campo Obrigatório!'},
-      {tipo: 'minlength', aviso: 'Minimo 11 numeros ou caracteres'},
-      {tipo: 'maxlength', aviso:'Maximo 11 numeros ou caracteres'}
+      {tipo: 'minlength', aviso: 'Minimo 11 numeros'},
+      {tipo: 'maxlength', aviso:'Maximo 11 numeros'}
     ],
     senha:[
       {tipo: 'required', aviso: 'Digite uma Senha'},
