@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { IonicStorageModule } from '@ionic/storage-angular';
+import { Drivers, Storage } from '@ionic/storage';
 
 
 
@@ -12,11 +13,17 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, IonicModule.forRoot(),  IonicStorageModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(),  IonicStorageModule.forRoot(), AppRoutingModule,   IonicStorageModule.forRoot({
+    name: '__mydb',
+    driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
+  })],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
 
-
+IonicStorageModule.forRoot({
+  name: '__mydb',
+  driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
+})
 
