@@ -11,6 +11,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./registro.page.scss'],
 })
 export class RegistroPage implements OnInit {
+
+  nomeInput;
+  emailInput;
+  cpfInput;
+  senhaInput;
+  confirmaSenhaInput;
+
   Usuario: Usuario = new Usuario();
 
 
@@ -98,6 +105,14 @@ export class RegistroPage implements OnInit {
     }else {
       alert('Formulario Inválido')
     }
+  }
+
+  async limpar(){
+    this.nomeInput='';
+    this.emailInput='';
+    this.cpfInput='';
+    this.senhaInput='';
+    this.confirmaSenhaInput='';
   }
 
 }

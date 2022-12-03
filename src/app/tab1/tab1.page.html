@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      Usuarios
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-item *ngFor="let user of listaUsuarios">
-    <ion-label>{{user.nome}}</ion-label>
+    <ion-label>Usuario: {{user.nome}}</ion-label>
   </ion-item>
 </ion-content>

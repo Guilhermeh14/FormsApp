@@ -54,4 +54,10 @@ export class LoginPage implements OnInit {
     }
   }
 
+  async registrar() {
+    this.route.navigateByUrl('/registro');
+  }
+
+
+
 }

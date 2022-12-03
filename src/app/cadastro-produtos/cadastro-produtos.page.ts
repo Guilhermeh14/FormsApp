@@ -86,4 +86,16 @@ export class CadastroProdutosPage implements OnInit {
       alert('Formulário Inválido!');
     }
   }
+
+ async limpar() {
+  this.nomeInput='';
+  this.descInput='';
+  this.valorInput='';
+  this.validadeInput='';
+ }
+
+ async voltar() {
+  this.route.navigateByUrl('/tabs/tab2')
+ }
+  
 }
